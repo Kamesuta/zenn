@@ -90,7 +90,7 @@ sudo ./fumagician
 ```
 ______________________________DISK(s) DETECTED______________________________ 
 |#|               Drive Model               |    Serial Number    | Firmware |
-|1| Samsung SSD 980 1TB                     | S649NX0T177901A     | 2B4QFXO7 |
+|1| Samsung SSD 980 1TB                     | S649NX0T******A     | 2B4QFXO7 |
 ```
 
 アップデート確認:
@@ -129,7 +129,7 @@ Proxmox GUIに戻り、`Datacenter > Storage > nvme` で `Enable` を再チェ�
 
 **ただし、アップデートは自己責任で行ってください～**
 
-### 参考リンク
+## 参考リンク
 
 https://blog.quindorian.org/2021/05/firmware-update-samsung-ssd-in-linux.html/
 
