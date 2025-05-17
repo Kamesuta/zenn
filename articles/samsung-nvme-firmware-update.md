@@ -131,7 +131,5 @@ Proxmox GUIに戻り、`Datacenter > Storage > nvme` で `Enable` を再チェ�
 
 ### 参考リンク
 
-* [Samsung SSD Firmware Update Utility](https://semiconductor.samsung.com/consumer-storage/support/tools/)
-* [Firmware update Samsung SSD in Linux - Intermittent Technology](https://blog.quindorian.org/2021/05/firmware-update-samsung-ssd-in-linux.html/)
-* [smartmontools](https://www.smartmontools.org/)
+https://blog.quindorian.org/2021/05/firmware-update-samsung-ssd-in-linux.html/
 
