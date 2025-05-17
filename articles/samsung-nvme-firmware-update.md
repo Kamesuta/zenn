@@ -45,8 +45,9 @@ Firmware Version:                   2B4QFXO7
 2B4QFXO7 → 3B4QFXO7
 ```
 
-## 実際の更新手順
+## 更新手順
 
+更新を行う前に必ずバックアップを取ってください！
 ### 1. VMを停止してNVMeを開放
 
 Proxmox GUIで以下の操作を行う
