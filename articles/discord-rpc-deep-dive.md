@@ -186,9 +186,9 @@ VSCodeやCursorで開発する際は、`ready`イベント内にブレークポ�
 
 RPC APIを応用して、**RPC APIでメッセージを取得し、Cursorに読み込ませて適切な返答を生成させる**ツールを作ってみました。
 
-![ツールの動作](/images/discord-rpc-deep-dive/cursor-conversation.gif)
-
 https://github.com/Kamesuta/discord-rpc-message-fetcher
+
+![ツールの動作](/images/discord-rpc-deep-dive/cursor-conversation.gif)
 
 ### 主な機能
 
