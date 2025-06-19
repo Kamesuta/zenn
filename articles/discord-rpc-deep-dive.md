@@ -42,7 +42,7 @@ RPC APIを使うと、以下の機能にアクセスできます：
 
 RPC APIは現在プライベートβ段階にあります。なので機能を公開してみんなに使ってもらうことはできません。  
 しかし、**自分だけが使用する分には誰でも利用可能**です。  
-Discord Developer Portalでアプリケーションを作成するだけで、すぐに試すことができます。
+[Discord Developer Portal](https://discord.com/developers/applications)でアプリケーションを作成するだけで、すぐに試すことができます。
 
 ## RPC APIを使うための認可フロー
 
@@ -90,14 +90,14 @@ sequenceDiagram
 ### 2. Node.jsとdiscord-rpcライブラリのインストール
 
 1. Node.js環境がない場合は、[Node.js](https://nodejs.org/)をインストールする。
-2. ターミナルで以下のコマンドを実行して、discord-rpcライブラリをインストールする。
+2. ターミナルで以下のコマンドを実行して、[discord-rpc](https://www.npmjs.com/package/discord-rpc)ライブラリをインストールする。
     ```cmd
     npm install discord-rpc
     ```
 
 ### 3. 認証の実装
 
-RPC APIの認証は`discord-rpc`ライブラリを使えば非常にシンプルです。重要なのは以下の2点です：
+RPC APIの認証は[discord-rpc](https://www.npmjs.com/package/discord-rpc)ライブラリを使えば非常にシンプルです。重要なのは以下の2点です：
 
 #### transport設定は必ず'ipc'を使用
 
