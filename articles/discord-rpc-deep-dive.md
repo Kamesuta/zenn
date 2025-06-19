@@ -10,25 +10,21 @@ published: true
 
 **「DiscordのBotは、Botが参加しているサーバーのメッセージしか取得できない」**
 
-Discord Bot開発をしたことがある方なら、この制約に一度は頭を悩ませたことがあるはず。  
-DMのやりとりをツールで取得したい、でも、DMにはBotを招待できない。
+とずっと思っていました。  
+でも、見つけてしまいました。Discordには「RPC API」というユーザーアカウントを制御できるAPIが存在するのです。  
 
-**その常識、覆せます。**
-
-Discordには「**RPC API**」というユーザーアカウントを制御できるAPIが存在するのです。  
-これを使えばDMの取得はもちろん、VCの参加なども自動で出来てしまいます。  
-
+これを使えば自分のDMの取得を自動で行うことが出来ます。  
 もちろん、セルフBOTなどの非公式APIではありません。(ちゃんと[公式ドキュメント](https://discord.com/developers/docs/topics/rpc)があります)
 
-この記事では、RPC APIの紹介と、それを使って「Cursorでの返答生成を補助するツール」を作った体験を共有します。
+この記事では、RPC APIでできること及び使い方の紹介と、それを使って「Cursorでの返答生成を補助するツール」を作った話をします。
 
 ## Discord RPC APIとは？
 
-### 誤解されがちだが「Rich Presence」ではない
+ゲームからDiscordクライアントを操作するAPIです。
 
-「Discord RPC」と検索してよく引っかかる記事は、Rich Presence機能というゲーム情報をプロフィールに表示する機能のことを指していることが多いです。  
+このAPIを使っている有名なツールとして、OBSにVCの様子をオーバーレイできる「[Discord StreamKit Overlay](https://streamkit.discord.com/overlay)」という公式ツールがあります。
 
-しかし、今回紹介するRPC APIは全く別物で、**Discordの機能そのものにアクセスできる**すごいAPIです。
+「Discord RPC」と検索して引っかかる「[Rich Presence](https://discord.com/developers/docs/rich-presence/overview)」というゲーム情報をプロフィールに表示する機能もRPC APIの機能の一つです。  
 
 ### RPC APIでできること
 
