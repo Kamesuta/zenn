@@ -146,3 +146,6 @@ dist
 .obsidian/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,obsidian
+
+# Affinity Designer 2
+*.afdesign~lock~
