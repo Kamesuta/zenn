@@ -23,20 +23,25 @@ Minecraft のプラグインを作ろうとしたけど・・・
 **最短で**「作る → 動かす → 配る」までを一緒に体験しましょう。
 
 ## 本書で使うテンプレート
+
 本書では、すぐにプラグイン開発を始められるよう、開発環境の設定を済ませた下記の**テンプレートリポジトリ**を使用します。
-クラウド開発環境「GitHub Codespaces」で開くだけで、すぐに開発を始められます。
+このテンプレートは、クラウド開発環境 **GitHub Codespaces** で開くことで、すぐに開発を始められるように設定されています。
 
 https://github.com/Kamesuta/minecraft-plugin-maker
+
+:::message
+本書では、GitHub Codespaces で作成される個別の開発環境を **Codespace** と呼びます。
+:::
 
 ## 必要なもの
 
 - かかる時間: 30〜60 分
 - 必要なもの: GitHub アカウント、Google アカウント、Web ブラウザ、Minecraft 1.21.8 クライアント
-- 使うもの: GitHub Codespaces、Paper サーバー、Gemini CLI（無料）
+- 使うもの: GitHub Codespaces、Minecraft サーバー、Gemini CLI（無料）
 
 ## できるようになること
 
-- ブラウザ上で Paper サーバーを起動して接続する
+- ブラウザ上で Minecraft サーバーを起動して接続する
 - AI に要望を伝えてプラグインを作ってもらう
 - 作ったプラグインを保存（Git）して配布（GitHub Releases）する
 
@@ -49,10 +54,10 @@ https://github.com/Kamesuta/minecraft-plugin-maker
 本書では、Minecraft 1.21.8 を使います。インストールしておいてください。
 
 本書で作成するプラグインは、**Paper** というプラグイン対応の Minecraft サーバーで動作します。
-Paper サーバーの立て方については、以下の記事などが参考になります。
+Minecraft サーバーの立て方については、以下の記事などが参考になります。
 https://agepote.jp/mcserver/pluginserver
 
-完成したプラグインは、上記の Paper サーバーに導入して遊ぶことができます。
+完成したプラグインは、上記の Minecraft サーバーに導入して遊ぶことができます。
 
 ## Google アカウントの年齢制限について
 
