@@ -1,6 +1,18 @@
 title: "5分で始められる初心者向けMinecraftプラグイン開発"
-summary: "GitHub Codespaces と Gemini を使って、超初心者でもブラウザだけで Minecraft プラグイン開発・テスト・配布まで体験できるハンズオン。スクショと手順で迷わず進めます。"
-topics: ["minecraft", "plugin", "github", "codespaces", "gemini"]
+summary: |
+  GitHub Codespaces ＆ Gemini CLI を使って、Minecraftプラグインを開発・テスト・配布まで一気に学べるハンズオン。
+  
+  ⏱️「楽しい！」を最速で体験！
+  　ブラウザを開くだけで、5分で整う開発環境テンプレートを用意しました！
+
+  🔰スクショと手順でやさしく解説！
+  　初心者でも安心して迷わず進められます。
+
+  💡プログラムは後回しでOK！
+  　AIが全部書いてくれます。まずはプラグインを動かして楽しみましょう。
+  　プログラミングはそのあと、ゆっくり覚えていけば大丈夫です。
+
+topics: ["minecraft", "papermc", "github", "geminicli", "tutorial"]
 published: false
 price: 0 # 有料の場合200〜5000
 # 本に含めるチャプターを順番に並べましょう
