@@ -28,6 +28,7 @@ Minecraft のプラグインを作ろうとしたけど・・・
 このテンプレートは、クラウド開発環境 **GitHub Codespaces** で開くことで、すぐに開発を始められるように設定されています。
 
 https://github.com/Kamesuta/minecraft-plugin-maker
+※ 上記テンプレートは次の章から使います。
 
 :::message
 本書では、GitHub Codespaces で作成される個別の開発環境を **Codespace** と呼びます。

@@ -50,3 +50,6 @@ Gemini CLI を使うためには 18 歳以上に設定された Google アカウ
    ![](/images/minecraft-plugin-tutorial/setup-gemini/gemini-cli-login-success.png)
 3. 以下の画面が表示されれば、セットアップは完了です。
    ![](/images/minecraft-plugin-tutorial/setup-gemini/gemini-cli-ready.png)
+   :::message
+   `X Disconnected: Failed to connect to IDE companion extension ～～～` と表示される場合がありますが、無視して大丈夫です。
+   :::

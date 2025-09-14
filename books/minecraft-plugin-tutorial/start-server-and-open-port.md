@@ -53,14 +53,16 @@ https://agepote.jp/mcserver/gameserver-hostingtool
    **満員で公開できないときは？**
 
    - 「公開番号」「公開サーバー」を変えて再試行。
+     ![](/images/minecraft-plugin-tutorial/start-server-and-open-port/secure-share-rotate-server.png)
    - それでもダメならページ下部の『時間制限付き招待キー』を発行して上部の招待キー欄に貼り付けるとうまくいくことがあります。
+     ![](/images/minecraft-plugin-tutorial/start-server-and-open-port/secure-share-invite-key.png)
 
    :::
 
 ## おまけ: OP を付与する
 
 1. 右の「Start Server」からコンソールを開きます。
-2. `/op <あなたのプレイヤー名>` を実行します。  
+2. `op <あなたのプレイヤー名>` を実行します。  
    ![](/images/minecraft-plugin-tutorial/start-server-and-open-port/grant-op-console.gif)
 
 ## おまけ: GitHub CLI でのポート転送（中級者向け）
