@@ -10,7 +10,7 @@ Gemini CLI を使うためには 18 歳以上に設定された Google アカウ
 保護者のアカウントを借りるなどしてご用意ください。
 :::
 
-## 🎯 できること
+## 🎯 この章でやること
 
 - Gemini CLI にログインし、Codespace で使えるようにする
 
@@ -30,6 +30,10 @@ Gemini CLI を使うためには 18 歳以上に設定された Google アカウ
 2. 「リンクを開きますか？」という確認が表示されたら「開く」をクリックします。
    ブラウザで Google のログインページが開きます。
    ![](/images/minecraft-plugin-tutorial/setup-gemini/terminal-open-web-link.png)
+   :::message
+   「Please restart Gemini CLI to continue.」と表示されて始まらない場合、ターミナルに`gemini` と入力して `Enter`キーを押せば再度 URL が表示されます。
+   ![](/images/minecraft-plugin-tutorial/setup-gemini/gemini-cli-restart.gif)
+   :::
 3. Google アカウントでログインします。
    ![](/images/minecraft-plugin-tutorial/setup-gemini/google-login.png)
 4. 「Copy」ボタンを押して、表示された認証コードをコピーします。
