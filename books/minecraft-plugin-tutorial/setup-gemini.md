@@ -16,12 +16,14 @@ Gemini CLI を使うためには 18 歳以上に設定された Google アカウ
 
 ## 1. Gemini CLI を起動する
 
-1. `F1`キーを押して、**コマンドパレット**を開きます。
-2. 検索窓に「gemini cli」と入力し、「**Gemini CLI: Run**」を選択してください。
-   ![](/images/minecraft-plugin-tutorial/setup-gemini/command-palette-gemini-cli.png)
-3. 画面下部にターミナル（コマンドを入力する黒い画面）が開きます。
+1. ターミナルの右上にある「+」ボタン右側のプルダウンを開き、「Gemini CLI」を選択します。
+   ![](/images/minecraft-plugin-tutorial/setup-gemini/gemini-cli-open.png)
+2. 新しいタブで Gemini CLI が開きます。
    見やすいように右側へ移動させておくと、後の作業がスムーズです。
    ![](/images/minecraft-plugin-tutorial/setup-gemini/terminal-move.gif)
+   :::message
+   Gemini CLI タブがすぐに閉じてしまった場合は、同様の手順でもう一度開き直してください。
+   :::
 
 ## 2. ブラウザで認証してコードをコピーする
 
@@ -30,10 +32,6 @@ Gemini CLI を使うためには 18 歳以上に設定された Google アカウ
 2. 「リンクを開きますか？」という確認が表示されたら「開く」をクリックします。
    ブラウザで Google のログインページが開きます。
    ![](/images/minecraft-plugin-tutorial/setup-gemini/terminal-open-web-link.png)
-   :::message
-   「Please restart Gemini CLI to continue.」と表示されて始まらない場合、ターミナルに`gemini` と入力して `Enter`キーを押せば再度 URL が表示されます。
-   ![](/images/minecraft-plugin-tutorial/setup-gemini/gemini-cli-restart.gif)
-   :::
 3. Google アカウントでログインします。
    ![](/images/minecraft-plugin-tutorial/setup-gemini/google-login.png)
 4. 「Copy」ボタンを押して、表示された認証コードをコピーします。
