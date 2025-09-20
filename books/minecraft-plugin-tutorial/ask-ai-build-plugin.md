@@ -77,7 +77,7 @@ AI があなたの要望をもとに「こんな感じですか？」という�
 あなたが「はい」と答えると、AI が自動で実装を進めます。
 この間は待つだけで OK。難しいプログラミング作業は AI が担当します。
 
-![](/images/minecraft-plugin-tutorial/ask-ai-build-plugin/gemini-cli-implementing.png)
+![](/images/minecraft-plugin-tutorial/ask-ai-build-plugin/gemini-cli-implementing.gif)
 
 :::message
 **うまく動かないときはAIを頼ろう**
