@@ -48,6 +48,12 @@ AI があなたの要望をもとに「こんな感じですか？」という�
 
 ## 4. 仕様を確認する
 計画の確認が終わると、仕様書が開きます。
+
+::: message
+仕様書がうまく開かない場合は、エクスプローラーから `src/仕様書.md` を開いてください
+![](/images/minecraft-plugin-tutorial/ask-ai-build-plugin/open-spec.png)
+:::
+
 プレビューボタン（②）を押すと、読みやすく表示されます。
 ![](/images/minecraft-plugin-tutorial/ask-ai-build-plugin/gemini-cli-spec-preview.png)
 *(今回は少し違っていたので、以下のように依頼しました。)*
