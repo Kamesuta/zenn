@@ -32,8 +32,8 @@ https://github.com/Kamesuta/minecraft-plugin-maker
    ![](/images/minecraft-plugin-tutorial/github-to-codespaces/codespace-setup-wait.png)  
    セットアップ中、右下に通知が出ますが、関係ないので ☓ で閉じて OK です。
    ![](/images/minecraft-plugin-tutorial/github-to-codespaces/notification-close.png)
-3. 数分待つと、画面下部のターミナルに「★ Maven のセットアップが完了しました。」のような表示が出れば準備完了です。  
-   ![](/images/minecraft-plugin-tutorial/github-to-codespaces/maven-setup-complete.png)
+3. 数分待つと、画面下部のターミナルに「★ セットアップスクリプトが完了しました。」のような表示が出れば準備完了です。  
+   ![](/images/minecraft-plugin-tutorial/github-to-codespaces/setup-script-complete.png)
 
 :::message
 通信が遅い環境では 10 分前後かかることがあります。待っている間に次章をざっと眺めておきましょう。
