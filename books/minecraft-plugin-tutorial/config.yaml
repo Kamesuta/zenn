@@ -22,7 +22,4 @@ chapters:
   - start-server-and-open-port
   - setup-gemini
   - ask-ai-build-plugin
-  - read-the-code
-  - debug-with-breakpoints
-  - change-minecraft-version
   - save-and-release
