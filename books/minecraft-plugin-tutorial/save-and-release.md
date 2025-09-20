@@ -1,153 +1,137 @@
 ---
-title: 【重要】作ったプラグインが消えないように保存する方法
+title: 作ったプラグインを安全に保存して公開する方法
 ---
 
-このチュートリアルで使っている開発環境「GitHub Codespaces」は、実はとても重要な注意点があります。
-それは、**30日以上アクセスしないと、環境がまるごと自動で削除されてしまう**ことです。
+GitHub Codespaces はとても便利ですが、**30 日間アクセスしないと Codespace がまるごと自動削除**されてしまいます。
+せっかく作ったプラグインのソースコードが消えてしまったら、とても悲しいですよね。
+Codespace が消えてもソースコードが残るように、**作ったプラグインをGitHubに保存し、安全に永久保存する方法**を学びます。
 
-せっかく作ったプラグインのコードが消えてしまったら、とても悲しいですよね。
-
-この章は**とても大切な応用編**です。
-Codespace が消えても大丈夫なように、**作ったプラグインをGitHubに保存し、安全に永久保存する方法**を学びましょう。
-
-GitHubに保存しておけば、コードが消える心配がなくなるだけでなく、いつでも「昨日の状態に戻す」といったことも可能になります。
-
-この作業は、**次に新しいプラグインを作る時**からぜひ実践してみてください。
+GitHubに保存しておけば、コードが消えないだけでなく、いつでも「昨日の状態に戻す」といったことも可能になります。
 
 ---
 
-ここからは、**新しいプラグイン開発を始める場合の手順**を説明します。
+ここからは**新しくプラグイン開発を始める場合の手順**を説明します。
 
 :::message
-**前の章で作ったプラグインを保存したい場合**
-後述の手順でテンプレートからプロジェクトを作成した後、前の章で作った Codespace から下記ファイルをコピペしてください。
-- `src` フォルダ
-- `spec` フォルダ
-- `pom.xml` ファイル
+**前の章で作ったプラグインを残したい場合**
+後述の手順にて、テンプレートから新しいプロジェクトを作ったあと、以前の Codespace から以下のファイル・フォルダをコピーしてください。
+- `src`
+- `spec`
+- `pom.xml`
 
-※ 旧Codespaceでフォルダを右クリックして「ダウンロード」し、新しいCodespaceにドラッグ&ドロップでアップロードすると簡単です。
+旧 Codespace で右クリック→「ダウンロード」、新しい Codespace にドラッグ＆ドロップでアップロードすると簡単です。
 :::
 
 ## 🎯 この章でやること
-- テンプレートから自分のリポジトリを作成
-- 変更をGitHubに保存（コミット＆プッシュ）
-- 他の人が使えるように公開（リリース）
+- テンプレートから自分専用リポジトリを作る
+- 変更をコミット＆プッシュして GitHub に保存する
+- jar ファイルをリリースして配布できるようにする
 
-## 1. テンプレートからリポジトリを作る
-今回使用したテンプレートリポジトリは筆者のアカウントに紐づいており、そのままでは保存することができません。
-テンプレートをコピーして新規にリポジトリを作ることで、変更を保存することができるようになります。
+## 1. テンプレートから自分のリポジトリを作成する
+筆者のテンプレートはそのままだと保存できないので、自分のアカウントにコピーしましょう。
 
-1. 以下のテンプレートを開きます。
+1. テンプレートを開きます。
 
 https://github.com/Kamesuta/minecraft-plugin-maker
+2. 「Use this template」→「Create a new repository」を選択します。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/github-template-use-this-template.png)
+3. 好きなリポジトリ名を入れて「Create repository」を押します。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/github-template-create-repo.png)
+4. テンプレートからリポジトリが作成されると、「リポジトリページ」が開きます。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/github-template-repo-created.png)
+   *例: `Kamesuta/ChatGrass` リポジトリが完成しました*
+5. この自分のリポジトリのページから、第 2〜4 章で行った手順と同じように Codespace をセットアップしましょう。
+6. 第 5 章以降の開発は、コードの変更をこまめに GitHub に保存しながら進めます。
 
-2. 「Use this template」から「Create a new repository」を押します。
-	![](/images/minecraft-plugin-tutorial/save-and-release/github-template-use-this-template.png)
+## 2. 変更を GitHub に保存する（コミット＆プッシュ）
+GitHub では「コミット」で履歴を作り、「プッシュ」でサーバーに送ります。これを繰り返すことで安全にコードを残せます。
 
-3. プラグイン名を入れて「Create repository」を押します。
-	![](/images/minecraft-plugin-tutorial/save-and-release/github-template-create-repo.png)
-
-4. コピーが完了すると、リポジトリページが開きます。
-	![](/images/minecraft-plugin-tutorial/save-and-release/github-template-repo-created.png)
-	*(Kamesuta/ChatGrass リポジトリができました)*
-5. テンプレート作成後は、2～4章で行った手順と同様にCodespaceのセットアップを行いましょう。
-6. 5章のプラグイン制作は、コードの変更をGitHubに保存しながら進めていきますので、次のステップに進んでください。
-
-## 2. 変更をGitHubに保存する
-GitHubでは「コミット」→「プッシュ」という操作をすることで、その時点のソースコードをGitHubに保存する事ができます。
 :::message
-**Tips**: コミット、プッシュとは？
-- コミット = ソースコードの変更を「変更履歴」という形で手元(Codespace内)に保存すること、または保存された変更履歴のこと。
-- プッシュ = 手元に保存されたコミットをGitHubサーバー上(Codespace外)にアップロードすること
-- コミットをこまめにしておけば、あとでその時点まで戻すことができます。
+**Tips｜用語の整理**
+- コミット: 変更内容を手元（Codespace 内）に履歴として記録する操作・履歴のこと。
+- プッシュ: 手元のコミットを GitHub 上（Codespace の外）へアップロードする操作。
+- こまめにコミットしておくと、後からその時点へ戻せます。
 :::
 
-1. `/setup` コマンドを叩いて仕様書が完成すると、左の「ソース管理」アイコンに数字がつくのでクリックして開きます。
-	![](/images/minecraft-plugin-tutorial/save-and-release/vscode-source-control-panel.png)
-2. メッセージ欄になにをしたか簡単に記載し、緑色の「コミット」ボタンを押します。
-	(メッセージは後で履歴を振り返るときに役立ちます)
-	![](/images/minecraft-plugin-tutorial/save-and-release/vscode-commit-message.png)
-	ダイアログが出たら「常時」を選びましょう。
-	![](/images/minecraft-plugin-tutorial/save-and-release/vscode-commit-always-dialog.png)
-	*「常時」を選んでおくことで次回から聞かれなくなります。*
-4. 「変更を同期 1」という表示に変わるので、クリックすることで**プッシュ**されます。
-	![](/images/minecraft-plugin-tutorial/save-and-release/vscode-sync-changes-button.png)
-	ダイアログが出たら「OK、今後は表示しない」を選んでおきましょう
-	![](/images/minecraft-plugin-tutorial/save-and-release/vscode-sync-confirm-dialog.png)
-5. これで保存は完了です！Codespaceを削除してもソースコードは失われません。
-6. ステップ1で開いた「リポジトリページ」を開き、仕様書がコミットされているか確認してみましょう。
-	![](/images/minecraft-plugin-tutorial/save-and-release/github-repository-commits.png)
+1. `/setup` コマンドで仕様書が生成されると、左側の「ソース管理」アイコンに数字が表示されます。クリックして開きます。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/vscode-source-control-panel.png)
+2. メッセージ欄に簡単な内容を書いて、緑色の「コミット」ボタンを押します。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/vscode-commit-message.png)
+   初回はダイアログが出るので「常時」を選んでおくと次回から聞かれません。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/vscode-commit-always-dialog.png)
+3. ボタン表示が「変更を同期 1」に変わります。クリックすると GitHub へ**プッシュ**されます。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/vscode-sync-changes-button.png)
+   ダイアログが出たら「OK、今後は表示しない」を選んでおくとスムーズです。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/vscode-sync-confirm-dialog.png)
+4. これで保存完了です。Codespace を削除しても GitHub 上にソースコードが残ります。
+5. Step 1 で開いたリポジトリページを確認し、コミットが反映されているか見てみましょう。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/github-repository-commits.png)
 
-変更が失われないようにこまめにコミット＆プッシュする癖をつけておきましょう。
+**ポイント:** 変更が失われないよう、作業の節目でコミット＆プッシュする習慣をつけましょう。
+
 :::message
-**Tips**: 巻き戻したくなった場合
-履歴を確認したり巻き戻したくなった場合はGit Graphを使うことで操作できます。
+**Tips｜履歴を戻したくなったら**
+`Git Graph` 拡張機能を使うと履歴の確認や巻き戻しが直感的に行えます。
 ![](/images/minecraft-plugin-tutorial/save-and-release/vscode-git-graph.png)
-操作方法など気になった方はグーグル検索してみてください。
-https://www.google.com/search?q=git+graph+%E8%A7%A3%E8%AA%AC
+詳しい使い方は「Git Graph 使い方」などで検索してみてください。
+https://www.google.com/search?q=git+graph+%E4%BD%BF%E3%81%84%E6%96%B9
 :::
 
-## 3. 他の人が使えるように公開する（リリース）
-GitHubに保存しただけでは、他の人がプラグイン（jarファイル）を簡単にダウンロードすることはできません。
+## 3. 他の人が使えるようにリリースする
+GitHub に保存しただけでは、他の人が jar ファイルをすぐにダウンロードできません。リリース機能を使って配布できる形にしておきましょう。
 
-GitHubの「リリース」という機能を使うと、特定のバージョンのプラグインを配布用に公開できます。
+1. Codespace 内の `target/〜〜〜〜-1.0-SNAPSHOT.jar` を右クリックし、「ダウンロード...」でローカルに保存します。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/vscode-download-jar.png)
+2. Step 1 で開いた自分のリポジトリページにアクセスします。
+3. 「Create a new release」をクリックします。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/github-create-release.png)
+   :::message
+   2 回目以降は「Releases」→「Draft a new release」から作成できます。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/github-draft-new-release.png)
+   :::
+4. タグ（例: `v1.0`）を作り、ダウンロードした jar ファイルをドラッグ＆ドロップで添付します。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/github-release-upload-assets.png)
+5. 「Publish release」を押せば公開完了です。
+6. 公開した URL を友だちに送ったり、SNS でシェアしましょう。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/github-release-published.png)
 
-1. プラグインをダウンロードする
-	 Codespace 内の `target/～～～～-1.0-SNAPSHOT.jar` を右クリックして「ダウンロード...」
-	![](/images/minecraft-plugin-tutorial/save-and-release/vscode-download-jar.png)
-2. ステップ1で開いた「リポジトリページ」を開く
-3. 「Create a new release」
-	![](/images/minecraft-plugin-tutorial/save-and-release/github-create-release.png)
-	:::message
-	2回目以降は「Releases」→「Draft a new release」で開く。
-	![](/images/minecraft-plugin-tutorial/save-and-release/github-draft-new-release.png)
-	:::
-4. タグを作成（例: `v1.0`）し、ダウンロードしたjarファイルをドラッグ&ドロップで添付
-	![](/images/minecraft-plugin-tutorial/save-and-release/github-release-upload-assets.png)
-5. 「Publish release」を押して公開
-6. 公開できたらURLを友だちに送ったり、SNSでシェアしよう
-	![](/images/minecraft-plugin-tutorial/save-and-release/github-release-published.png)
 :::message
-ステップ1でPrivateリポジトリに設定した方は、ここでリリースしても友だちが見ることができません。
-jarファイルを直接Discordなどで送信して共有しましょう。
+リポジトリを Private にしている場合は、リリースしても他の人からは見えません。
+そのときは jar ファイルを Discord などで直接共有しましょう。
 :::
 
-## おまけ: Codespace を削除する
+## おまけ: 不要になった Codespace を削除する
+Codespace は存在しているだけでストレージ容量を消費します。使い終わったら削除または停止しておきましょう。
 
-Codespaceは存在するだけで「月間ストレージ量」を消費していきます。
-そのため、不要になったCodespaceは削除する必要があります。
-### Codespaceの削除方法
 :::message
-プッシュしていないソースコードは失われるので要注意
-消したくない変更はGitHubにプッシュしておきましょう。
+削除すると、プッシュしていない変更は失われます。
+消したくない作業は必ず GitHub にプッシュしておいてください。
 :::
 
-1. 下記のCodespace管理ページを開く
-
-https://github.com/codespaces/
-
-2. 消したい Codespace の右側にある「・・・」からDeleteを選びましょう。
-	![](/images/minecraft-plugin-tutorial/save-and-release/github-codespaces-menu.png)
-3. 本当に消していいか聞かれるので「Delete」を選択
-	![](/images/minecraft-plugin-tutorial/save-and-release/github-codespaces-delete-confirm.png)
+### Codespace を削除する手順
+1. 管理ページを開きます。
+   https://github.com/codespaces/
+2. 削除したい Codespace の右側にある「…」メニューから Delete を選びます。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/github-codespaces-menu.png)
+3. 確認ダイアログで「Delete」を押すと削除完了です。
+   ![](/images/minecraft-plugin-tutorial/save-and-release/github-codespaces-delete-confirm.png)
 
 :::message
-なお、「Stop codespace」 を押すことでCodespaceを停止できます。
-停止しておくことで月60時間の利用時間を節約できます。
-通常、30分間放置することで自動停止されますが、使い終わったらこまめに停止することをおすすめします。
+「Stop codespace」を選ぶと一時停止できます。
+月 60 時間の無料枠を節約したいときに便利です。
+30 分放置すると自動停止しますが、使い終わったら自分で停止しておくと安心です。
 
 ![](/images/minecraft-plugin-tutorial/save-and-release/github-codespaces-stop-button.png)
 
-ちなみに、Codespace内からも停止できます。
+Codespace 内からも停止できます。
 ![](/images/minecraft-plugin-tutorial/save-and-release/vscode-stop-codespace.png)
 :::
 
 ## おわりに
-ここまで読んでくださり、ありがとうございました。
+最後まで読んでいただきありがとうございました。
 
-このチュートリアルを通じて、あなたが自分のアイデアを形にするってこんなに楽しいんだ！と感じていただけたなら幸いです。
-ぜひ、あなたの作ったプラグインを友だちに使ってもらったり、SNSでシェアしたりしてみてください。
+このチュートリアルを通して、アイデアを形にする楽しさを味わってもらえたなら嬉しいです。
+作ったプラグインは友だちに配ったり、SNS で紹介したり、ぜひ活用してみてください。
 
-また、今回のチュートリアルで使った Gemini CLI はまだまだ発展途上の技術です。
-今後も進化していくと思いますので、ぜひ注目してみてください。
-
+今回使った Gemini CLI も日々進化しています。
+これからのアップデートにも注目してみましょう。
