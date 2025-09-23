@@ -70,6 +70,13 @@ GitHub では「コミット」で履歴を作り、「プッシュ」でサー�
 **ポイント:** 変更が失われないよう、作業の節目でコミット＆プッシュする習慣をつけましょう。
 
 :::message
+**Tips｜AIの変更が気に入らなかったら前回のコミットまで戻そう**
+AIが動いていたコードを壊してしまうことがあります。
+そんなときは「全ての変更を破棄」で前回コミットした時点まで巻き戻せます。
+![](/images/minecraft-plugin-tutorial/save-and-release/vscode-discard-all-changes.png)
+:::
+
+:::message
 **Tips｜履歴を戻したくなったら**
 `Git Graph` 拡張機能を使うと履歴の確認や巻き戻しが直感的に行えます。
 ![](/images/minecraft-plugin-tutorial/save-and-release/vscode-git-graph.png)
